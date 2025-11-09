@@ -39,8 +39,6 @@ fi
 
 wallName=$(basename "${wallSelection}")
 
-magick ${wallSelection} -scale 50% -blur "${blurLvl}" -resize 200% "${cacheDir}/blurred_${wallName}" 
-
-swww img "${cacheDir}/blurred_${wallName}"
+magick ${wallSelection} -scale 50% -blur "${blurLvl}" -resize 200% - | swww img -
 
 exit 0
