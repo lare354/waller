@@ -9,11 +9,13 @@
 #    ▌▀▀▐▖█▌▌ ▙▖▄▌▄▌ ▌  ▖▄▌
 #     ▀                                                                                    
 
-rofiCmd="rofi -dmenu -theme ~/.config/rofi/waller.rasi"
 
 cacheDir=$HOME/.cache/waller
 confDir=$HOME/.config/waller
 conf=$confDir/waller.conf
+rasi=$confDir/waller.rasi
+
+rofiCmd="rofi -dmenu -theme ${rasi}"
 
 if [ ! -d "$cacheDir" ]; then
 	mkdir $cacheDir	
@@ -26,7 +28,11 @@ if [ ! -f "$conf" ]; then
 	printf '# enable/disable blur (true/false) \nblur=false \n\n# path to wallpaper directory \n#wallsDir="/usr/share/wallpapers/" \n\n# use soft blur (true/false) \nsoftBlur=true' > $confDir/waller.conf
 fi
 
-. $confDir/waller.conf
+if [ ! -f "$rasi" ]; then
+		
+fi
+
+. $conf
 
 
 # Select a picture with rofi
