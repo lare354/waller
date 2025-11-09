@@ -29,7 +29,7 @@ if [ ! -f "$conf" ]; then
 fi
 
 if [ ! -f "$rasi" ]; then
-		
+	printf 'error'
 fi
 
 . $conf

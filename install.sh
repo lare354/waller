@@ -1,20 +1,22 @@
 #!/bin/bash
 
 localBin=$HOME/.local/bin
+cacheDir=$HOME/.cache/waller
+confDir=$HOME/.config/waller
+conf=$confDir/waller.conf
+rasi=$confDir/waller.rasi
 
-mkdir .tmp
-cd .tmp
-git clone https://github.com/lare354/waller
-cd waller
-chmod +x waller
+if [ ! -d "$cacheDir" ]; then
+	mkdir $cacheDir	
+fi
 
-cp waller $localBin/waller
+if [ ! -f "$conf" ]; then
+	if [ ! -d "$confDir" ]; then
+		mkdir $confDir
+	fi 
+	printf '# enable/disable blur (true/false) \nblur=false \n\n# path to wallpaper directory \n#wallsDir="/usr/share/wallpapers/" \n\n# use soft blur (true/false) \nsoftBlur=true' > $confDir/waller.conf
+fi
 
-if [ ! -f $localBin/waller ]; then
-	printf 'Failed to move waller to $HOME/.local/bin/'
-	return 0
-else
-	printf 'Success'
-	cd ../..
-	rm -rf .tmp
+if [ ! -f "$rasi" ]; then
+	printf 'error'
 fi
