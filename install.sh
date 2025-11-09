@@ -14,9 +14,12 @@ if [ ! -f "$conf" ]; then
 	if [ ! -d "$confDir" ]; then
 		mkdir $confDir
 	fi 
-	printf '# enable/disable blur (true/false) \nblur=false \n\n# path to wallpaper directory \n#wallsDir="/usr/share/wallpapers/" \n\n# use soft blur (true/false) \nsoftBlur=true' > $confDir/waller.conf
+		curl -o $conf https://raw.githubusercontent.com/lare354/waller/refs/heads/main/waller.conf
 fi
 
-if [ ! -f "$rasi" ]; then
-	printf 'error'
-fi
+curl -o $rasi https://raw.githubusercontent.com/lare354/waller/refs/heads/main/waller.rasi
+
+curl -o $localBin/waller https://raw.githubusercontent.com/lare354/waller/refs/heads/main/waller
+chmod +x $localBin/waller
+
+printf 'done'

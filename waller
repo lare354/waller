@@ -17,21 +17,6 @@ rasi=$confDir/waller.rasi
 
 rofiCmd="rofi -dmenu -theme ${rasi}"
 
-if [ ! -d "$cacheDir" ]; then
-	mkdir $cacheDir	
-fi
-
-if [ ! -f "$conf" ]; then
-	if [ ! -d "$confDir" ]; then
-		mkdir $confDir
-	fi 
-	printf '# enable/disable blur (true/false) \nblur=false \n\n# path to wallpaper directory \n#wallsDir="/usr/share/wallpapers/" \n\n# use soft blur (true/false) \nsoftBlur=true' > $confDir/waller.conf
-fi
-
-if [ ! -f "$rasi" ]; then
-	printf 'error'
-fi
-
 . $conf
 
 
