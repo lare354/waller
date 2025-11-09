@@ -6,6 +6,7 @@ mkdir .tmp
 cd .tmp
 git clone https://github.com/lare354/waller
 cd waller
+chmod +x waller
 
 cp waller $localBin/waller
 
@@ -14,4 +15,6 @@ if [ ! -f $localBin/waller ]; then
 	return 0
 else
 	printf 'Success'
+	cd ../..
+	rm -rf .tmp
 fi
