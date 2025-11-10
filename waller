@@ -10,7 +10,6 @@
 #     ▀                                                                                    
 
 
-cacheDir=$HOME/.cache/waller
 confDir=$HOME/.config/waller
 conf=$confDir/waller.conf
 rasi=$confDir/waller.rasi

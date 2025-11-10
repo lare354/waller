@@ -1,14 +1,9 @@
 #!/bin/bash
 
 localBin=$HOME/.local/bin
-cacheDir=$HOME/.cache/waller
 confDir=$HOME/.config/waller
 conf=$confDir/waller.conf
 rasi=$confDir/waller.rasi
-
-if [ ! -d "$cacheDir" ]; then
-	mkdir $cacheDir	
-fi
 
 if [ ! -f "$conf" ]; then
 	if [ ! -d "$confDir" ]; then
