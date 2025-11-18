@@ -36,8 +36,7 @@ if ! $softBlur; then
 	blurLvl="0x8"
 fi
 
-wallName=$(basename "${wallSelection}")
-
-magick ${wallSelection} -scale 50% -blur "${blurLvl}" -resize 200% - | swww img -
+magick ${wallSelection} -scale 50% -blur "${blurLvl}" -resize 200% ${confDir}/.tmp 
+swww img ${confDir}/.tmp
 
 exit 0
